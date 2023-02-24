@@ -25,6 +25,21 @@ startProgram()
 async function startProgram(){
 
     // team.push(new Manager("Bob", 1, "test@test.com", 223))
+    let {managerName, managerId} = await inquirer
+    .prompt([
+    {
+        type: 'input',
+        name: 'managerName',
+        message: "Enter team manager's name",
+      },
+      {
+        type: 'input',
+        name: 'managerId',
+        message: "Enter team manager's ID number",
+      },
+    ])
+      console.log(managerName)
+      console.log(managerId)
 
 
     let htmlDoc = render(team)
