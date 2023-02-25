@@ -63,9 +63,6 @@ async function startProgram(){
         type: 'list',
         name: 'addTeamMember',
         choices: ['Add an Engineer', 'Add an intern', 'Finish building the team'],
-        filter(val) {
-          return val.toLowerCase();
-        },
       },
 
     ])
