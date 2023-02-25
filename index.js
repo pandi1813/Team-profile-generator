@@ -106,6 +106,7 @@ async function startProgram(){
           message: "Enter intern's school",
         }
       ])
+      team.push(new Intern(internName, internId, internEmail, internSchool))
     }
     
     
