@@ -40,20 +40,21 @@ async function startProgram(){
       type: 'input',
       name: 'managerEmail',
       message: "Enter team manager's email address",
-      },
-      {
-        type: 'input',
-        name: 'officeNumber',
-        message: "Enter team manager's office number",
-      },
-      {
-        type: 'list',
-        name: 'newEmployee',
-        choices: ['Add an Engineer', 'Add an Intern', 'Finish building the team'],
-      },
-      
-    ])
+    },
+    {
+      type: 'input',
+      name: 'officeNumber',
+      message: "Enter team manager's office number",
+    },
+    {
+      type: 'list',
+      name: 'newEmployee',
+      choices: ['Add an Engineer', 'Add an Intern', 'Finish building the team'],
+    },
     
+  ])
+  team.push(new Manager(managerName, managerId, managerEmail, officeNumber))
+  
     if (newEmployee === "Add an Engineer") {
       console.log("adding engineer")
       let {engineerName, engineerId, engineerEmail, engineerGithub} = await inquirer
@@ -79,6 +80,7 @@ async function startProgram(){
           message: "Enter engineer's Github username",
         }
       ])
+      team.push(new Engineer(engineerName, engineerId, engineerEmail, engineerGithub))
     }else if(newEmployee === "Add an Intern"){
       console.log("adding intern")
       let {internName, internId, internEmail, internSchool} = await inquirer
@@ -106,7 +108,6 @@ async function startProgram(){
       ])
     }
     
-    team.push(new Manager(managerName, managerId, managerEmail, officeNumber))
     
     let htmlDoc = render(team)
     
