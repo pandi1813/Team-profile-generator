@@ -48,11 +48,25 @@ async function startProgram(){
         message: "Enter team manager's office number",
       },
     ])
-  
+    addTeamMember();
     
-
-
+    
+    
     let htmlDoc = render(team)
-
+    
     await fs.writeFile(outputPath, htmlDoc, (err) => console.log("File created"));
-}
+  }
+
+  function addTeamMember() {
+    inquirer.prompt([
+      {
+        type: 'list',
+        name: 'addTeamMember',
+        choices: ['Add an Engineer', 'Add an intern', 'Finish building the team'],
+        filter(val) {
+          return val.toLowerCase();
+        },
+      },
+
+    ])
+  }
