@@ -82,6 +82,29 @@ async function startProgram(){
       ])
     }else if(newEmployee === "Add an Intern"){
       console.log("adding intern")
+      let {internName, internId, internEmail, internSchool} = await inquirer
+      .prompt([
+        {
+        type: 'input',
+        name: 'internName',
+        message: "Enter intern's name",
+        },
+        {
+          type: 'input',
+          name: 'internId',
+          message: "Enter intern's ID number",
+        },
+        {
+          type: 'input',
+          name: 'internEmail',
+          message: "Enter intern's email address",
+        },
+        {
+          type: 'input',
+          name: 'internSchool',
+          message: "Enter intern's school",
+        }
+      ])
     }
 
     // await addTeamMember()
