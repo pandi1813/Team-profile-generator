@@ -24,23 +24,22 @@ let newTeamMember;
 startProgram()
 async function startProgram(){
 
-    // team.push(new Manager("Bob", 1, "test@test.com", 223))
-    let {managerName, managerId, managerEmail, officeNumber, newEmployee} = await inquirer
-    .prompt([
+  let {managerName, managerId, managerEmail, officeNumber, newEmployee} = await inquirer
+  .prompt([
     {
-        type: 'input',
-        name: 'managerName',
-        message: "Enter team manager's name",
-      },
-      {
-        type: 'input',
-        name: 'managerId',
-        message: "Enter team manager's ID number",
-      },
-      {
-        type: 'input',
-        name: 'managerEmail',
-        message: "Enter team manager's email address",
+      type: 'input',
+      name: 'managerName',
+      message: "Enter team manager's name",
+    },
+    {
+      type: 'input',
+      name: 'managerId',
+      message: "Enter team manager's ID number",
+    },
+    {
+      type: 'input',
+      name: 'managerEmail',
+      message: "Enter team manager's email address",
       },
       {
         type: 'input',
@@ -52,17 +51,17 @@ async function startProgram(){
         name: 'newEmployee',
         choices: ['Add an Engineer', 'Add an Intern', 'Finish building the team'],
       },
-
+      
     ])
-  
+    
     if (newEmployee === "Add an Engineer") {
       console.log("adding engineer")
       let {engineerName, engineerId, engineerEmail, engineerGithub} = await inquirer
       .prompt([
         {
-        type: 'input',
-        name: 'engineerName',
-        message: "Enter engineer's name",
+          type: 'input',
+          name: 'engineerName',
+          message: "Enter engineer's name",
         },
         {
           type: 'input',
@@ -85,9 +84,9 @@ async function startProgram(){
       let {internName, internId, internEmail, internSchool} = await inquirer
       .prompt([
         {
-        type: 'input',
-        name: 'internName',
-        message: "Enter intern's name",
+          type: 'input',
+          name: 'internName',
+          message: "Enter intern's name",
         },
         {
           type: 'input',
@@ -106,9 +105,8 @@ async function startProgram(){
         }
       ])
     }
-
-    // await addTeamMember()
-    // .then();
+    
+    team.push(new Manager(managerName, managerId, managerEmail, officeNumber))
     
     let htmlDoc = render(team)
     
@@ -120,20 +118,4 @@ async function startProgram(){
     
   }
   
-  // function addTeamMember() {
-  //   newTeamMember = inquirer.prompt([
-  //     {
-  //       type: 'list',
-  //       name: 'newTeamMember',
-  //       choices: ['Add an Engineer', 'Add an intern', 'Finish building the team'],
-  //     },
-  //   ])
-    
-    
-  //   if (newTeamMember === "add an engineer") {
-  //     console.log("new engineer")
-  //   }
-    
-    // return newTeamMember
-    // console.log(newTeamMember)
-  // }
+  
