@@ -1,5 +1,7 @@
 # Team profile generator
 
+Click [here](#https://pandi1813.github.io/Team-profile-generator/) to see an example of a generated page
+
 ## Table of contents
 
 - [Overview](#overview)
