@@ -116,8 +116,20 @@ async function startProgram(){
     let writeHTML = fs.writeFile(outputPath, htmlDoc, (err) => console.log("File created"));
     
     
-    
-    
   }
   
-  
+
+
+// addingEmployee()
+
+// function addingEmployee() {
+//   let newEmployee =  inquirer
+//     .prompt(
+//         {
+//        type: 'list',
+//        name: 'newEmployee',
+//        choices: ['Add an Engineer', 'Add an Intern', 'Finish building the team'],
+//         }
+//      )
+//      .then
+// }  
